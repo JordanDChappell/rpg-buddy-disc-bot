@@ -1,6 +1,6 @@
 import { Client } from 'discord.js';
 import { config } from 'dotenv';
-import { extractDiceRoll } from './utils/diceUtils.js';
+import { extractDiceRollResponse } from './utils/diceUtils.js';
 
 config(); // required to ensure our .env file variables are created
 
@@ -17,7 +17,7 @@ client.on('message', async (message) => {
   const content = message.content.trim();
 
   if (content.startsWith("!roll")) {
-    const response = extractDiceRoll(username, content);
+    const response = extractDiceRollResponse(username, content);
     if (response) message.channel.send(response);
   }
 });
