@@ -62,4 +62,4 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           key: ${{ secrets.SFTP_KEY }}
           port: 22
-          script: pm2 restart rpgbuddy
+          script: bash -i -c "pm2 restart rpgbuddy"
