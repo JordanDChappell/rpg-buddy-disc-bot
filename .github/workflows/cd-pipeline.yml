@@ -44,10 +44,10 @@ jobs:
       - name: Create .env file
         # You may pin to the exact commit or the version.
         # uses: SpicyPizza/create-envfile@8b294d5418a318a60b171c77f0f514c356feec37
-        uses: SpicyPizza/create-envfile@v1.1
+        uses: SpicyPizza/create-envfile@master
         with:
           envkey_TOKEN: ${{ secrets.TOKEN }}
-          directory: ./codebase
+          directory: codebase
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
