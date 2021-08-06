@@ -5,7 +5,12 @@
   "main": "app.js",
   "author": "Jordan Chappell",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node ./app.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0"
   }
 }
