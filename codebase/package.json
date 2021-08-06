@@ -1,0 +1,11 @@
+{
+  "name": "rpg-buddy",
+  "version": "0.0.1",
+  "description": "Discord bot designed to aid with running table-top rpg games online",
+  "main": "app.js",
+  "author": "Jordan Chappell",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./app.js"
+  }
+}
