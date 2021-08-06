@@ -40,7 +40,7 @@ const rollDice = (sides, numberOfDice = 1, modifier = 0) => {
 export const extractDiceRollResponse = (username, content) => {
   if (!content.includes('d')) {
     // default d20 dice roll
-    return formatOutput(username, 1, rollDice(20), 20);
+    return formatOutput(username, rollDice(20), 1, 20);
   }
   
   // determine the number and type of dice being rolled and it's modifier
