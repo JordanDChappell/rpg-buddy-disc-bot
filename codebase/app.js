@@ -14,7 +14,7 @@ client.on('message', async (message) => {
 
   const member = await message.guild.member(message.author);
   const username = member ? member.nickname : message.author.username;
-  const content = message.content.trim();
+  const content = message.content.trim().toLowerCase();
 
   if (content.startsWith("!roll")) {
     const response = extractDiceRollResponse(username, content);
