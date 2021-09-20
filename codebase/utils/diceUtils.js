@@ -54,9 +54,15 @@ export const extractDiceRollResponse = (username, content) => {
   if (isNaN(numberOfDice))
     numberOfDice = 1;
 
+  if (numberOfDice <= 0)
+    return 'That\'s a weird number of dice 😢';
+
   // determine the number of sides on the dice being rolled
   const endOfSides = hasModifier ? indexOfPlus : content.length;
   const sides = parseInt(content.substring(indexOfD + 1, endOfSides));
+
+  if (sides <= 0 || sides > 1000)
+    return 'That\'s a strange dice you\'re trying to roll 🙊';
 
   // determine the modifier being added to the total dice roll
   const modifier = hasModifier ? parseInt(content.substring(indexOfPlus + 1, content.length)) : 0;

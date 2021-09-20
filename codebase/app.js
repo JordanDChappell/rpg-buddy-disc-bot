@@ -1,5 +1,6 @@
 import { Client } from 'discord.js';
 import { config } from 'dotenv';
+import { startChosenGame, pauseGame, unpauseGame } from './games/gameUtils.js';
 import { extractDiceRollResponse } from './utils/diceUtils.js';
 
 config(); // required to ensure our .env file variables are created
@@ -19,6 +20,19 @@ client.on('message', async (message) => {
   if (content.startsWith("!roll")) {
     const response = extractDiceRollResponse(username, content);
     if (response) message.channel.send(response);
+  }
+
+  if (content.startsWith("!start")) {
+    message.channel.send('Initialising...');
+    startChosenGame(content, message.channel);
+  }
+
+  if (content.startsWith("!pause")) {
+    pauseGame();
+  }
+
+  if (content.startsWith("!unpause")) {
+    unpauseGame();
   }
 });
 
